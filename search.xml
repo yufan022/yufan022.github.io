@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F06%2F15%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[Docker常用命令]]></title>
+    <url>%2F2019%2F06%2F15%2Fdocker%2F</url>
+    <content type="text"><![CDATA[mysql 12docker run --name first-mysql -p 3306:3306 -d -v /opt/docker_v/mysql/my.conf:/etc/mysql/mysql.conf.d/mysqld.cnf -v /opt/docker_v/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysqldocker exec -it first-mysql /bin/bash redis 1docker run --name first_redis -p 6379:6379 -v /opt/docker_v/redis/data:/data -v /opt/docker_v/redis/redis.conf:/usr/local/etc/redis/redis.conf -d redis redis-server --appendonly yes ssr 1docker run -d --name ssr -p 8989:8989 malaohu/ssr-with-net-speeder -s 0.0.0.0 -p 8989 -k yf0720 -m rc4-md5 -o http_simple -O auth_sha1_v4]]></content>
+      <categories>
+        <category>command</category>
+      </categories>
   </entry>
   <entry>
-    <title><![CDATA[second]]></title>
-    <url>%2F2019%2F06%2F15%2Fsecond%2F</url>
-    <content type="text"><![CDATA[第二个文件这里记录的是字数and hello world]]></content>
+    <title><![CDATA[Git常用命令]]></title>
+    <url>%2F2019%2F06%2F15%2Fgit%2F</url>
+    <content type="text"><![CDATA[git pull所有远程分支 123git branch -r | grep -v &apos;\-&gt;&apos; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; donegit fetch --allgit pull --all 秘钥 1234567891011121314151617// 设置全局git config --global user.name “用户名”git config --global user.email “邮箱”// 生成秘钥ssh-keygen -t rsa// 查看秘钥cat ~/.ssh/id_rsa.pub// 生成多个秘钥ssh-keygen -t rsa -C &apos;second@mail.com&apos; -f id_rsa_second// ~/.SSH config文件配置秘钥映射Host gitlab.xxx.com ##可以随意命名，链接时使用这个名字 HostName gitlab.xxx.com User git Port 22 IdentityFile ~/.ssh/id_rsa_second// 测试配置文件是否正常ssh -T git@gitcafe.com]]></content>
+      <categories>
+        <category>command</category>
+      </categories>
   </entry>
   <entry>
-    <title><![CDATA[first]]></title>
-    <url>%2F2019%2F06%2F15%2Ffirst%2F</url>
+    <title><![CDATA[Linux常用命令]]></title>
+    <url>%2F2019%2F06%2F15%2Flinux%2F</url>
     <content type="text"></content>
       <categories>
-        <category>test</category>
+        <category>command</category>
       </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
   </entry>
 </search>
