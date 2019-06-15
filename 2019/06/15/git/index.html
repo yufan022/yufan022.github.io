@@ -103,17 +103,18 @@
 
 
 
-  <meta name="description" content="git pull所有远程分支    123git branch -r | grep -v &amp;apos;\-&amp;gt;&amp;apos; | while read remote; do git branch --track &amp;quot;$&amp;#123;remote#origin/&amp;#125;&amp;quot; &amp;quot;$remote&amp;quot;; donegit fetch --allgit pull --a">
+  <meta name="description" content="记录常用git命令">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git常用命令">
 <meta property="og:url" content="http://yoursite.com/2019/06/15/git/index.html">
 <meta property="og:site_name" content="blog by YuFan">
-<meta property="og:description" content="git pull所有远程分支    123git branch -r | grep -v &amp;apos;\-&amp;gt;&amp;apos; | while read remote; do git branch --track &amp;quot;$&amp;#123;remote#origin/&amp;#125;&amp;quot; &amp;quot;$remote&amp;quot;; donegit fetch --allgit pull --a">
+<meta property="og:description" content="记录常用git命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-15T09:23:31.985Z">
+<meta property="og:updated_time" content="2019-06-15T09:29:51.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git常用命令">
-<meta name="twitter:description" content="git pull所有远程分支    123git branch -r | grep -v &amp;apos;\-&amp;gt;&amp;apos; | while read remote; do git branch --track &amp;quot;$&amp;#123;remote#origin/&amp;#125;&amp;quot; &amp;quot;$remote&amp;quot;; donegit fetch --allgit pull --a">
+<meta name="twitter:description" content="记录常用git命令">
 
 
 
@@ -419,7 +420,7 @@
                 
               
 
-              <time title="创建时间：2019-06-15 17:20:51 / 修改时间：17:23:31" itemprop="dateCreated datePublished" datetime="2019-06-15T17:20:51+08:00">2019-06-15</time>
+              <time title="创建时间：2019-06-15 17:20:51 / 修改时间：17:29:51" itemprop="dateCreated datePublished" datetime="2019-06-15T17:20:51+08:00">2019-06-15</time>
             
 
             
@@ -470,7 +471,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">602</span>
+                <span title="本文字数">614</span>
               
 
               
@@ -504,9 +505,15 @@
       
 
       
-        <p> git pull所有远程分支<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -r | grep -v &apos;\-&gt;&apos; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; done</span><br><span class="line">git fetch --all</span><br><span class="line">git pull --all</span><br></pre></td></tr></table></figure></p>
+        <h2 id="记录常用git命令"><a href="#记录常用git命令" class="headerlink" title="记录常用git命令"></a>记录常用git命令</h2><a id="more"></a>
 <ul>
-<li>秘钥  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 设置全局</span><br><span class="line">git config --global user.name “用户名”</span><br><span class="line">git config --global user.email “邮箱”</span><br><span class="line">// 生成秘钥</span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line">// 查看秘钥</span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line">// 生成多个秘钥</span><br><span class="line">ssh-keygen -t rsa -C &apos;second@mail.com&apos; -f id_rsa_second</span><br><span class="line">// ~/.SSH config文件配置秘钥映射</span><br><span class="line">Host gitlab.xxx.com ##可以随意命名，链接时使用这个名字  </span><br><span class="line">    HostName gitlab.xxx.com  </span><br><span class="line">    User git  </span><br><span class="line">    Port 22  </span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_second</span><br><span class="line">// 测试配置文件是否正常</span><br><span class="line">ssh -T git@gitcafe.com</span><br></pre></td></tr></table></figure></li>
+<li><p>git pull所有远程分支</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -r | grep -v &apos;\-&gt;&apos; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; done</span><br><span class="line">git fetch --all</span><br><span class="line">git pull --all</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>秘钥</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 设置全局</span><br><span class="line">git config --global user.name “用户名”</span><br><span class="line">git config --global user.email “邮箱”</span><br><span class="line">// 生成秘钥</span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line">// 查看秘钥</span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line">// 生成多个秘钥</span><br><span class="line">ssh-keygen -t rsa -C &apos;second@mail.com&apos; -f id_rsa_second</span><br><span class="line">// ~/.SSH config文件配置秘钥映射</span><br><span class="line">Host gitlab.xxx.com ##可以随意命名，链接时使用这个名字  </span><br><span class="line">    HostName gitlab.xxx.com  </span><br><span class="line">    User git  </span><br><span class="line">    Port 22  </span><br><span class="line">    IdentityFile ~/.ssh/id_rsa_second</span><br><span class="line">// 测试配置文件是否正常</span><br><span class="line">ssh -T git@gitcafe.com</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
 
       
@@ -528,6 +535,15 @@
     
 
     <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
       
 
       
@@ -594,8 +610,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -637,6 +662,27 @@
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
             </nav>
           
@@ -712,6 +758,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#记录常用git命令"><span class="nav-number">1.</span> <span class="nav-text">记录常用git命令</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -741,7 +804,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">1k</span>
+    <span title="站点总字数">3k</span>
   
 
   
@@ -752,7 +815,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1 分钟</span>
+    <span title="站点阅读时长">2 分钟</span>
   
 </div>
 
