@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[小米6刷机Mokee+Google服务框架体验Android原生]]></title>
     <url>%2F2019%2F06%2F17%2Fmokee%2F</url>
-    <content type="text"><![CDATA[背景最近学英语背单词，发现ios设备因为权限问题有很多限制。比如“百词斩”在Android平台有替换锁屏界面为单词提示的功能，ios平台则无法实现。 正好手头有一台小米6设备闲置，无奈MIUI广告太多。很早前就想体验Mokee开源系统接近原生Android的体验。决定刷机Mokee+Google框架，尝鲜原生Android。 步骤 解锁手机 申请小米账号解锁权限 获得解锁资格后-下载小米解锁工具 解锁 进入“设置 -&gt; 开发者选项 -&gt; 设备解锁状态”中绑定账号和设备； 手动进入Bootloader模式（关机后，同时按住开机键和音量下键）； 通过USB连接手机，点击 “解锁”按钮； 刷入recovery 刷入ROM 刷入Google框架 刷入Root]]></content>
+    <content type="text"><![CDATA[背景最近学英语背单词，发现ios设备因为权限问题有很多限制。比如“百词斩”在Android平台有替换锁屏界面为单词提示的功能，ios平台则无法实现。正好手头有一台小米6设备闲置，无奈MIUI广告太多。很早前就想体验Mokee开源系统接近原生Android的体验。决定刷机Mokee+Google框架，尝鲜原生Android。 步骤 解锁手机 申请 - 小米账号解锁权限 获得解锁资格后 - 下载小米解锁工具 手机操作解锁 进入“设置 -&gt; 开发者选项 -&gt; 设备解锁状态”中绑定账号和设备； 手动进入Bootloader模式（关机后，同时按住开机键和音量下键）； 通过USB连接手机，点击 “解锁”按钮； 刷入recovery 进入魔趣下载页搜索设备名 点击Recovery下载 下载Recovery刷机包 使用小米刷机工具包中的工具 命令行执行命令验证设备 fastboot devices 刷入Recovery fastboot flash recovery twrp-x.x.x-x-x.img 进入Recovery 关闭设备后，按住音量调高 + 电源键，直到进入 Recovery 模式，然后松开 // 注意此处一定按住按键，出现twrp引导页再松开，否则会进入小米自带Recovery 刷入ROM OpenGapps Magisk 下载ROM刷机包 此处可提前下载放入手机sdcard目录 Recovery下点击WIPE 点击 Format Data 执行格式化过程。这将删除加密以及存储在内部存储上的所有文件 找到刷机包，刷入系统 可同样刷入OpenGapps（Google框架）以及Magisk Manager（Root权限） 注意：此处手机不可设置锁屏密码，否则在Recovery下要求输入密码，导致无法解锁Data，找不到下载的刷机包。 Mokee效果图]]></content>
   </entry>
   <entry>
     <title><![CDATA[Docker容器运行kafka]]></title>
