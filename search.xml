@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[小米6刷机Mokee+Google服务框架体验Android原生]]></title>
+    <url>%2F2019%2F06%2F17%2Fmokee%2F</url>
+    <content type="text"><![CDATA[背景最近学英语背单词，发现ios设备因为权限问题有很多限制。比如“百词斩”在Android平台有替换锁屏界面为单词提示的功能，ios平台则无法实现。 正好手头有一台小米6设备闲置，无奈MIUI广告太多。很早前就想体验Mokee开源系统接近原生Android的体验。决定刷机Mokee+Google框架，尝鲜原生Android。 步骤 解锁手机 申请小米账号解锁权限 获得解锁资格后-下载小米解锁工具 解锁 进入“设置 -&gt; 开发者选项 -&gt; 设备解锁状态”中绑定账号和设备； 手动进入Bootloader模式（关机后，同时按住开机键和音量下键）； 通过USB连接手机，点击 “解锁”按钮； 刷入recovery 刷入ROM 刷入Google框架 刷入Root]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker容器运行kafka]]></title>
+    <url>%2F2019%2F06%2F15%2Fkafka%2F</url>
+    <content type="text"><![CDATA[背景公司项目涉及mq选型，之前项目中使用过的都是activqMQ、rabbitMQ，对rocket及kafka新一代基于磁盘的mq并不了解，需搭建环境demo调研使用。 因本人只有一台阿里云（1c2g）实例且配置较低，工作学习中大部分中间件会在此实例运行。为减少环境因素影响，采用全docker容器方式运行。 Docker运行好处 容器销毁、创建较为便捷 不影响宿主机 开箱即用 环境隔离 免去环境依赖等影响 准备工作因kafk采用zookeeper管理集群信息，先启动zookeeper镜像。 zookeeper镜像采用 DockerHub downloads数第一的官方社区维护镜像 启动命令 1docker run --name some-zookeeper -p 2181 --restart always -d zookeeper]]></content>
+      <categories>
+        <category>中间件</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Docker常用命令]]></title>
     <url>%2F2019%2F06%2F15%2Fdocker%2F</url>
     <content type="text"><![CDATA[记录常用docker命令 docker基本命令 docker push 123$ sudo docker login --username=445436928@qq.com registry-vpc.cn-beijing.aliyuncs.com$ sudo docker tag [ImageId] registry-vpc.cn-beijing.aliyuncs.com/w_yufan/my_images:[镜像版本号]$ sudo docker push registry-vpc.cn-beijing.aliyuncs.com/w_yufan/my_images:[镜像版本号] docker镜像操作 mysql 12docker run --name first-mysql -p 3306:3306 -d -v /opt/docker_v/mysql/my.conf:/etc/mysql/mysql.conf.d/mysqld.cnf -v /opt/docker_v/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysqldocker exec -it first-mysql /bin/bash redis 1docker run --name first_redis -p 6379:6379 -v /opt/docker_v/redis/data:/data -v /opt/docker_v/redis/redis.conf:/usr/local/etc/redis/redis.conf -d redis redis-server --appendonly yes ssr 1docker run -d --name ssr -p 8989:8989 malaohu/ssr-with-net-speeder -s 0.0.0.0 -p 8989 -k yf0720 -m rc4-md5 -o http_simple -O auth_sha1_v4 mongodb 12345678910docker run --name mongo01 -p 27017:27017 -v /opt/docker_v/mongo:/data/db -d mongo --authdocker exec -it mongo01 /bin/bashmongouse admindb.createUser(&#123;user:&quot;root&quot;,pwd:&quot;root&quot;,roles:[&#123;role:&quot;root&quot;,db:&quot;admin&quot;&#125;]&#125;)exitmongo 宿主机ip/admin -uroot -puse admindb.auth(&quot;admin&quot;,&quot;admin&quot;)db.createUser(&#123;user: &quot;root&quot;,pwd: &quot;root&quot;,roles: [&#123; role: &quot;readWrite&quot;, db: &quot;admin&quot;&#125;]&#125;) java 1docker run -it --name java02 -p 1001:1001 -v /root/software:/mnt/software java jenkins 1docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts gitlab 1docker run --detach --hostname gitlab.example.com --publish 443:443 --publish 80:80 --publish 23:22 --name gitlab --restart always --volume /srv/gitlab/config:/etc/gitlab --volume /srv/gitlab/logs:/var/log/gitlab --volume /srv/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce:latest zookeeper 12docker pull zookeeperdocker run --privileged=true -d --name zookeeper --publish 2181:2181 -d zookeeper:latest]]></content>
